@@ -8,9 +8,11 @@ public interface IJuegoService {
     
     public List<Juego>listarJuegos();
 
-    public Juego guardarJuego(Juego juego);
+    public Boolean guardarJuego(Juego juego);
 
     public Juego buscarJuegoPorId(Long id);
 
     public void eliminarJuego(Juego juego);
+
+    public Boolean validarNombre(Juego juego);
 }

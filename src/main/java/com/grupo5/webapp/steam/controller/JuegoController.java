@@ -50,9 +50,13 @@ public class JuegoController {
     public ResponseEntity<Map<String, String>> agregarJuego(@RequestBody Juego juego){
         Map<String,String> response = new HashMap<>();
         try {
-            juegoService.guardarJuego(juego);
-            response.put("message", "El Juego Se Agrego Con Exito");
-            return ResponseEntity.ok(response);
+            if (juegoService.guardarJuego(juego)) {
+                response.put("msg", "El Juego Se Agrego Con Exito");
+                return ResponseEntity.ok(response);
+            }else{
+                response.put("msg", "El Nombre De Tu Juego Esta Vacio :[");
+                return ResponseEntity.badRequest().body(response);
+            }
         } catch (Exception e) {
             response.put("message", "Error");
             response.put("err", "Hubo Un Error Al Crear El Juego");
@@ -69,6 +73,7 @@ public class JuegoController {
             juego.setDescripcion(juegoNuevo.getDescripcion());
             juego.setFechaDeLanzamiento(juegoNuevo.getFechaDeLanzamiento());
             juego.setPrecio(juegoNuevo.getPrecio());
+            juego.setCategoria(juegoNuevo.getCategoria());
             juegoService.guardarJuego(juego);
             response.put("message", "El Juego Se Edito Con Exito");
             return ResponseEntity.ok(response);

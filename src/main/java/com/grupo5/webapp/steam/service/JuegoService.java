@@ -20,8 +20,13 @@ public class JuegoService implements IJuegoService{
     }
 
     @Override
-    public Juego guardarJuego(Juego juego) {
-        return juegoRepository.save(juego);
+    public Boolean guardarJuego(Juego juego) {
+        if (validarNombre(juego)) {
+            juegoRepository.save(juego);
+            return true; 
+        }else{
+            return false;
+        }
     }
 
     @Override
@@ -32,6 +37,15 @@ public class JuegoService implements IJuegoService{
     @Override
     public void eliminarJuego(Juego juego) {
         juegoRepository.delete(juego);
+    }
+
+    @Override
+    public Boolean validarNombre(Juego juego) {
+        if (juego.getNombre() == null || juego.getNombre().trim().isEmpty()) {
+            return false;
+        }else{
+            return true;
+        }
     }
 
 }
