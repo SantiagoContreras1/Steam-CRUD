@@ -41,12 +41,10 @@ public class ResenaService implements IResenaService {
 
      @Override
     public Boolean validarComentario(Resena resena) {
-        if (resena.getComentario() == null || resena.getComentario().trim().isEmpty()) {
+        if (resena.getComentario() == null || resena.getComentario().trim().isEmpty() || resena.getComentario().contains("fuck") || resena.getComentario().contains("shit") || resena.getComentario().contains("tzikin pashut") || resena.getComentario().contains("son of a bitch") || resena.getComentario().contains("motherfucker")) {
             return false;
         }else{
             return true;
         }
     }
-
-
 }
