@@ -16,6 +16,13 @@ public class Desarrollador {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Long id;
+<<<<<<< HEAD
     private String nombre;
     private String pais;
 }
+=======
+
+    private String nombre;
+    private String pais;
+}
+>>>>>>> origin/RobbinSisimit
