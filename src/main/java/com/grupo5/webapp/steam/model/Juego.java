@@ -35,4 +35,9 @@ public class Juego {
     joinColumns = @JoinColumn(name = "juego_id", referencedColumnName = "id"),
     inverseJoinColumns = @JoinColumn(name = "desarrollo_id", referencedColumnName = "id"))
     private List<Desarrollador> desarrolladores;
+<<<<<<< HEAD
 }
+=======
+
+}
+>>>>>>> origin/ManuelTejeda

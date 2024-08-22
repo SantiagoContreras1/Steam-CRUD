@@ -22,7 +22,11 @@ public class Usuario {
     private String psswd;
     private Integer edad;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
 >>>>>>> origin/SantiagoContreras
+=======
+}
+>>>>>>> origin/ManuelTejeda

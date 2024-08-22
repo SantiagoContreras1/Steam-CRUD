@@ -17,6 +17,7 @@ public class Desarrollador {
     @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Long id;
 <<<<<<< HEAD
+<<<<<<< HEAD
     private String nombre;
     private String pais;
 }
@@ -26,3 +27,8 @@ public class Desarrollador {
     private String pais;
 }
 >>>>>>> origin/RobbinSisimit
+=======
+    private String nombre;
+    private String pais;
+}
+>>>>>>> origin/ManuelTejeda
