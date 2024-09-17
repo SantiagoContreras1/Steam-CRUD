@@ -21,12 +21,6 @@ public class Usuario {
     private Date fechaRegistro;
     private String psswd;
     private Integer edad;
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> origin/SantiagoContreras
-=======
-}
->>>>>>> origin/ManuelTejeda
+
