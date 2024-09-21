@@ -7,8 +7,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import com.grupo5.webapp.steam.SteamApplication;
-import com.grupo5.webapp.steam.controller.FXController.DesarrolladorControllerFX;
-import com.grupo5.webapp.steam.controller.FXController.IndexController;
+import com.grupo5.webapp.steam.controller.FXController.FXCategoriaController;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -22,52 +21,46 @@ public class Main extends Application{
     private ConfigurableApplicationContext applicationContext;
     private Stage stage;
     private Scene scene;
+    
 
     @Override
     public void init(){
         this.applicationContext = new SpringApplicationBuilder(SteamApplication.class).run();
-
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         this.stage = primaryStage;
-        stage.setTitle("Steam Spring");
-        //vista inicial
-        indexView();
+        stage.setTitle("Steam APP");
+        FXCategoriaView();
         stage.show();
     }
 
-    public Initializable switchScene(String fxmlName, int width, int height) throws IOException{
+    public Initializable SwitchScene(String fxmlName, int width, int height) throws IOException{
         Initializable resultado = null;
         FXMLLoader loader = new FXMLLoader();
 
         loader.setControllerFactory(applicationContext::getBean);
-        InputStream archivo = Main.class.getResourceAsStream("/templates/" + fxmlName) ;
+        InputStream archivo = Main.class.getResourceAsStream("/templates/" + fxmlName);
         loader.setBuilderFactory(new JavaFXBuilderFactory());
         loader.setLocation(Main.class.getResource("/templates/" + fxmlName));
+
 
         scene = new Scene((AnchorPane) loader.load(archivo), width, height);
         stage.setScene(scene);
         stage.sizeToScene();
+
         resultado = (Initializable)loader.getController();
         return resultado;
     }
 
-    public void indexView(){
-        try{
-            IndexController indexView = (IndexController)switchScene("index.fxml", 1000, 600);
-            indexView.setStage(this);
-        }catch(Exception e){
+    public void FXCategoriaView(){
+        try {
+            FXCategoriaController CategoriaView = (FXCategoriaController)SwitchScene("categoria.fxml", 1000, 600);
+            CategoriaView.setStage(this);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public void desarrolladorView(){
-        try{
-            DesarrolladorControllerFX desarrolladorView = (DesarrolladorControllerFX)switchScene("desarrollador.fxml", 1000, 600);
-            desarrolladorView.setStage(this);
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
+
 }
