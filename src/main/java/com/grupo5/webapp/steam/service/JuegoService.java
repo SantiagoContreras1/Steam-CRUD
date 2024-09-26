@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import com.grupo5.webapp.steam.model.Juego;
 import com.grupo5.webapp.steam.repository.JuegoRepository;
+import com.grupo5.webapp.steam.utils.SteamAlert;
+
+import javafx.scene.control.ButtonType;
 
 @Service
 public class JuegoService implements IJuegoService{
@@ -27,6 +30,7 @@ public class JuegoService implements IJuegoService{
         }else{
             return false;
         }
+
     }
 
     @Override
@@ -42,6 +46,7 @@ public class JuegoService implements IJuegoService{
     @Override
     public Boolean validarNombre(Juego juego) {
         if (juego.getNombre() == null || juego.getNombre().trim().isEmpty()) {
+            SteamAlert.getInstance().mostrarAlertaInfo(102);
             return false;
         }else{
             return true;

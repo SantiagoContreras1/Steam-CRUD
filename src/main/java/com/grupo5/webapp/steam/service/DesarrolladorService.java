@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.grupo5.webapp.steam.model.Desarrollador;
 import com.grupo5.webapp.steam.repository.DesarrolladorRepository;
+import com.grupo5.webapp.steam.utils.SteamAlert;
 @Service
 public class DesarrolladorService implements IDesarrolladorService{
     @Autowired
@@ -39,12 +40,14 @@ public class DesarrolladorService implements IDesarrolladorService{
     @Override
     public Boolean verificarDesarrolladorDuplicado(Desarrollador desarrolladorNuevo) {
         List<Desarrollador> desarrolladores = listarDesarrolladores();
-        Boolean flag = false;
-        for(Desarrollador desarrollador: desarrolladores){
-            if(desarrollador.getNombre().equals(desarrolladorNuevo.getNombre())&&!desarrollador.getNombre().equals(desarrolladorNuevo.getNombre())){
-                return true;
+        for(Desarrollador desarrollador : desarrolladores) {
+            if(desarrollador.getNombre().equals(desarrolladorNuevo.getNombre()) 
+            && !desarrollador.getId().equals(desarrolladorNuevo.getId())) {
+                SteamAlert.getInstance().mostrarAlertaInfo(101);
+                return true; 
             }
         }
-        return flag;
+        return false;
     }
+
 }

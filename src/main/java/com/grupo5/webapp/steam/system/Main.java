@@ -7,8 +7,11 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import com.grupo5.webapp.steam.SteamApplication;
+import com.grupo5.webapp.steam.controller.FXController.CategoriaControllerFX;
 import com.grupo5.webapp.steam.controller.FXController.DesarrolladorControllerFX;
 import com.grupo5.webapp.steam.controller.FXController.IndexController;
+import com.grupo5.webapp.steam.controller.FXController.JuegoControllerFX;
+import com.grupo5.webapp.steam.controller.FXController.UsuariosControllerFX;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -67,6 +70,32 @@ public class Main extends Application{
             DesarrolladorControllerFX desarrolladorView = (DesarrolladorControllerFX)switchScene("desarrollador.fxml", 1000, 600);
             desarrolladorView.setStage(this);
         }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    public void juegoView(){
+        try{
+            JuegoControllerFX juegoView = (JuegoControllerFX)switchScene("juego.fxml", 1000, 600);
+            juegoView.setStage(this);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void categoriaView(){
+        try {
+            CategoriaControllerFX categoriaView = (CategoriaControllerFX)switchScene("categoria.fxml", 1000, 600);
+            categoriaView.setStage(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void usuariosView(){
+        try {
+            UsuariosControllerFX usuariosView = (UsuariosControllerFX)switchScene("usuarios.fxml", 1000, 600);
+            usuariosView.setStage(this);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

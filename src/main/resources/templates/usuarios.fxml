@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.grupo5.webapp.steam.controller.FXController.UsuariosControllerFX">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Usuarios.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="600.0" fitWidth="1000.0" layoutX="-14.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+      <TableView fx:id="tblUsuarios" layoutX="299.0" layoutY="218.0" onMouseClicked="#cargarFormEdit" prefHeight="202.0" prefWidth="675.0" style="-fx-border-width: 5; -fx-border-color: #130716;">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="38.39994812011719" text="ID" />
+          <TableColumn fx:id="colNombre" prefWidth="127.0" text="Nombre" />
+            <TableColumn fx:id="colMail" prefWidth="179.0" text="Mail" />
+            <TableColumn fx:id="colFechaRegistro" prefWidth="156.0" text="Fecha de Registro" />
+            <TableColumn fx:id="colPassword" prefWidth="115.0" text="Contraseña" />
+            <TableColumn fx:id="colEdad" minWidth="7.0" prefWidth="50.0" text="Edad" />
+        </columns>
+      </TableView>
+      <TextField fx:id="tfId" editable="false" layoutX="67.0" layoutY="77.0" prefHeight="40.0" prefWidth="191.0" promptText="ID" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-border-color: #130716; -fx-border-width: 5;">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="20.0" />
+         </font></TextField>
+      <TextField fx:id="tfPassword" layoutX="67.0" layoutY="368.0" prefHeight="40.0" prefWidth="191.0" promptText="Contraseña" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-border-color: #130716; -fx-border-width: 5;">
+         <font>
+            <Font size="17.0" />
+         </font></TextField>
+      <TextField fx:id="tfNombre" layoutX="67.0" layoutY="172.0" prefHeight="40.0" prefWidth="191.0" promptText="Nombre" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-border-color: #130716; -fx-border-width: 5;">
+         <font>
+            <Font size="17.0" />
+         </font></TextField>
+      <TextField fx:id="tfBuscar" layoutX="383.0" layoutY="170.0" prefHeight="33.0" prefWidth="148.0" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 5; -fx-border-color: #130716;" />
+      <TextField fx:id="tfMail" layoutX="67.0" layoutY="274.0" prefHeight="40.0" prefWidth="191.0" promptText="email" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-border-color: #130716; -fx-border-width: 5;">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnGuardar" layoutX="301.0" layoutY="429.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="58.0" prefWidth="110.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: #b08ea2; -fx-border-color: #130716; -fx-border-width: 4;" text="Guardar">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="btnEliminar" layoutX="421.0" layoutY="429.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="58.0" prefWidth="110.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: #b08ea2; -fx-border-color: #130716; -fx-border-width: 4;" text="Eliminar">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="btnLimpiar" layoutX="546.0" layoutY="429.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="58.0" prefWidth="110.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: #b08ea2; -fx-border-color: #130716; -fx-border-width: 4;" text="Vaciar">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="btnRegresar" layoutX="667.0" layoutY="429.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="58.0" prefWidth="125.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: #b08ea2; -fx-border-color: #130716; -fx-border-width: 4;" text="Regresar">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font></Button>
+      <TextField fx:id="tfEdad" layoutX="72.0" layoutY="446.0" prefHeight="40.0" prefWidth="91.0" promptText="Edad" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-border-color: #130716; -fx-border-width: 5;">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfFecha" layoutX="72.0" layoutY="537.0" prefHeight="40.0" prefWidth="191.0" promptText="yyyy-mm-dd" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-border-color: #130716; -fx-border-width: 5;">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnBuscar" layoutX="299.0" layoutY="161.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="52.0" prefWidth="81.0" style="-fx-border-color: #130716; -fx-border-width: 5; -fx-background-color: #b08ea2; -fx-border-radius: 20; -fx-background-radius: 20;">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Lupa.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

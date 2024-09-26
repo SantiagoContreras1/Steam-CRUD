@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.grupo5.webapp.steam.model.Usuario;
 import com.grupo5.webapp.steam.repository.UsuarioRepository;
+import com.grupo5.webapp.steam.utils.SteamAlert;
 
 @Service
 public class UsuarioService implements IUsuarioService{
@@ -26,10 +27,10 @@ public class UsuarioService implements IUsuarioService{
     @Override
     public Boolean guardarUsuario(Usuario usuario) {
         if (verificarEdad(usuario)) {
-            return true; // No se guarda el usuario, ya que es menor de 18 años
+            return false; // No se guarda el usuario, ya que es menor de 18 años
         }else{
             usuarioRepository.save(usuario);
-            return false; // El usuario se guarda correctamente
+            return true; // El usuario se guarda correctamente
         }
     }
 
@@ -45,8 +46,11 @@ public class UsuarioService implements IUsuarioService{
 
         if (edadNew < 18) {
             flag = true; //Si es menor bro
-        }
+            SteamAlert.getInstance().mostrarAlertaInfo(103);
+        }else{
+            return false;
 
+        }
         return flag;
 
     }

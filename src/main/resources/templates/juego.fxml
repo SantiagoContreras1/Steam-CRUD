@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.grupo5.webapp.steam.controller.FXController.JuegoControllerFX">
+   <children>
+      <ImageView fitHeight="676.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/juegos.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="tfId" editable="false" layoutX="58.0" layoutY="77.0" prefHeight="34.0" prefWidth="194.0" promptText="ID" style="-fx-border-color: #130716; -fx-border-width: 5; -fx-border-radius: 20; -fx-background-radius: 20;" />
+      <TextField fx:id="tfNombre" layoutX="58.0" layoutY="185.0" prefHeight="34.0" prefWidth="194.0" promptText="Nombre" style="-fx-border-color: #130716; -fx-border-width: 5; -fx-border-radius: 20; -fx-background-radius: 20;" />
+      <TextField fx:id="tfBuscar" layoutX="543.0" layoutY="186.0" prefHeight="34.0" prefWidth="194.0" style="-fx-border-color: #130716; -fx-border-radius: 20; -fx-border-color: #130716; -fx-border-width: 4; -fx-border-width: 5; -fx-border-radius: 20; -fx-background-radius: 20;" />
+      <Button fx:id="btnBuscar" layoutX="460.0" layoutY="177.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="52.0" prefWidth="81.0" style="-fx-border-color: #130716; -fx-border-width: 5; -fx-background-color: #b08ea2; -fx-border-radius: 20; -fx-background-radius: 20;">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Lupa.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TextArea fx:id="taDescripcion" layoutX="66.0" layoutY="467.0" prefHeight="101.0" prefWidth="231.0" promptText="Descripcion" style="-fx-border-color: #130716; -fx-border-width: 5;" />
+      <ComboBox fx:id="cmbCategoria" layoutX="315.0" layoutY="71.0" prefWidth="150.0" style="-fx-border-color: #130716; -fx-border-width: 5; -fx-border-radius: 20; -fx-background-radius: 20; -fx-background-color: #b08ea2;" />
+      <TextField fx:id="tfLanzamiento" layoutX="66.0" layoutY="384.0" prefHeight="34.0" prefWidth="194.0" promptText="YYYY-MM-DD" style="-fx-border-color: #130716; -fx-border-width: 5; -fx-border-radius: 20; -fx-background-radius: 20;" />
+      <TextField fx:id="tfPrecio" layoutX="58.0" layoutY="295.0" prefHeight="34.0" prefWidth="194.0" promptText="0.00" style="-fx-border-color: #130716; -fx-border-width: 5; -fx-border-radius: 20; -fx-background-radius: 20;" />
+      <TableView fx:id="tblJuegos" layoutX="458.0" layoutY="241.0" onMouseClicked="#cargarForm" prefHeight="172.0" prefWidth="504.0" style="-fx-border-color: #130716; -fx-border-width: 5;">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="47.0" text="ID" />
+            <TableColumn fx:id="colNombre" text="Nombre" />
+            <TableColumn fx:id="colLanzamiento" prefWidth="77.0" text="Lanzamiento" />
+            <TableColumn fx:id="colDescripcion" prefWidth="127.0" text="Descripcion" />
+            <TableColumn fx:id="colPrecio" minWidth="0.0" prefWidth="68.0" text="Precio" />
+            <TableColumn fx:id="colCategoria" prefWidth="94.0" text="Categoria" />
+         </columns>
+      </TableView>
+      <ComboBox fx:id="cmbDesarrollador" layoutX="580.0" layoutY="71.0" prefWidth="150.0" style="-fx-border-color: #130716; -fx-border-width: 5; -fx-border-radius: 20; -fx-background-radius: 20; -fx-background-color: #b08ea2;" />
+      <Button fx:id="btnGuardar" layoutX="465.0" layoutY="426.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="58.0" prefWidth="110.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: #b08ea2; -fx-border-color: #130716; -fx-border-width: 4;" text="Guardar" textFill="#111111">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnEliminar" layoutX="585.0" layoutY="426.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="58.0" prefWidth="110.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: #b08ea2; -fx-border-color: #130716; -fx-border-width: 4;" text="Eliminar" textFill="#111111">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnLimpiar" layoutX="710.0" layoutY="426.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="58.0" prefWidth="110.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: #b08ea2; -fx-border-color: #130716; -fx-border-width: 4;" text="Vaciar" textFill="#111111">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnRegresar" layoutX="831.0" layoutY="426.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="58.0" prefWidth="125.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: #b08ea2; -fx-border-color: #130716; -fx-border-width: 4;" text="Regresar" textFill="#111111">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

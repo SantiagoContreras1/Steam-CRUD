@@ -1,6 +1,7 @@
 package com.grupo5.webapp.steam.model;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -33,7 +34,7 @@ public class Juego {
     @ManyToMany
     @JoinTable(name = "juegos_desarrolladores",
     joinColumns = @JoinColumn(name = "juego_id", referencedColumnName = "id"),
-    inverseJoinColumns = @JoinColumn(name = "desarrollo_id", referencedColumnName = "id"))
-    private List<Desarrollador> desarrolladores;
+    inverseJoinColumns = @JoinColumn(name = "desarrollador_id", referencedColumnName = "id"))
+    private List<Desarrollador> desarrolladores = new ArrayList<>();
 }
 

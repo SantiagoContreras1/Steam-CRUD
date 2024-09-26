@@ -11,10 +11,10 @@ import lombok.ToString;
 @Entity
 @ToString
 @Data
-@Table(name="categoria")
+@Table(name="categorias")
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long Id;
+    private Long Id;
     private String juegoCategoria;
 }
